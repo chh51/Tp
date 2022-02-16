@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "GRDB",
+        "repositoryURL": "https://github.com/groue/GRDB.swift",
+        "state": {
+          "branch": null,
+          "revision": "d40474d2b78fe530d0cf1216c46fd1fc5e30e539",
+          "version": "5.21.0"
+        }
+      },
+      {
+        "package": "GRDBQuery",
+        "repositoryURL": "https://github.com/groue/GRDBQuery",
+        "state": {
+          "branch": null,
+          "revision": "4301166cd2aee9ce37b4057c9a58f5cc3bbeae06",
+          "version": "0.1.0"
+        }
+      },
+      {
+        "package": "swift-atomics",
+        "repositoryURL": "https://github.com/apple/swift-atomics.git",
+        "state": {
+          "branch": null,
+          "revision": "919eb1d83e02121cdb434c7bfc1f0c66ef17febe",
+          "version": "1.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
