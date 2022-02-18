@@ -1,17 +1,24 @@
 import Foundation
 
-/// Category of *aTplEntry*
-public enum eTplCategory: Int, CaseIterable, Identifiable, pTpcArrayable {
-    /// Persistent store operations
-    case eModel = 0
-    /// User interface operations
-    case eUI    = 1
+/// Output stream for *TplEntry*
+public enum eTplOutput: Int, CaseIterable, Identifiable, pTpcArrayable {
+    
+    /// Debug console
+    case eConsole           = 0
+    /// Persist local memory
+    case ePersistMemory     = 1
+    /// Persist local file
+    case ePersistFile       = 2
+    /// Persist remote
+    case ePersistRemote     = 3
     
     /// Unique descriptive string
     public var description: String {
         switch self {
-        case .eModel:           return "Model"
-        case .eUI:              return "User Interface"
+        case .eConsole:         return "Console"
+        case .ePersistMemory:   return "Persist to Memory"
+        case .ePersistFile:     return "Persist to File"
+        case .ePersistRemote:   return "Persist to Remote"
         }
     }
     

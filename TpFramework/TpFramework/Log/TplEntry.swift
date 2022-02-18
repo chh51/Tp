@@ -1,6 +1,5 @@
 
 import Foundation
-import GRDB
 import Atomics
 import os
 
@@ -14,10 +13,11 @@ public actor aTplEntry: Identifiable {
     
     /// Unique Identifiable.id within a process lifespan.
     /// Numbered sequentially from 1
-    public nonisolated let id:          Int64 = _lastId.wrappingIncrementThenLoad(ordering: .sequentiallyConsistent)
+    public nonisolated let id:          Int64 =
+                _lastId.wrappingIncrementThenLoad(ordering: .sequentiallyConsistent)
     
     /// OSLogType ( from lowest .debug to highest .fault )
-    public nonisolated let level:       OSLogType
+    public nonisolated let level:       eTplLevel
     
     /// The *eTplCategory*
     public nonisolated let category:    eTplCategory
@@ -40,7 +40,15 @@ public actor aTplEntry: Identifiable {
     /// #function - declaration where statement appears
     public nonisolated let function:    String
     
-    public init( _      level_:    OSLogType,
+    ///  Log entry with unique ID, time stamp, message, and origin location
+    /// - Parameters:
+    ///   - level_: level of message **eTplLevel**
+    ///   - category_:  category of message **eTplCategory**
+    ///   - message_:  Message body (may include interpolated strings)
+    ///   - fileID_:  File location ( default provided )
+    ///   - line_:  Line ( default provided )
+    ///   - fxn_:  Function name ( default provided )
+    public init( _      level_:    eTplLevel,
                  _      category_: eTplCategory,
                  _      message_:  String,
                  fileID fileID_:   String = #fileID,

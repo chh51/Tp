@@ -17,6 +17,11 @@
 		83B0089927B98B040028BA6F /* TplCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0089827B98B040028BA6F /* TplCategory.swift */; };
 		83B0089C27B9B56D0028BA6F /* tTplEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0089B27B9B56D0028BA6F /* tTplEntry.swift */; };
 		83BCC28A27BDA4B100F5AF12 /* GRDBQuery in Frameworks */ = {isa = PBXBuildFile; productRef = 83BCC28927BDA4B100F5AF12 /* GRDBQuery */; };
+		83BCC28C27BDC13400F5AF12 /* TplOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BCC28B27BDC13400F5AF12 /* TplOutput.swift */; };
+		83BCC28E27BDC23800F5AF12 /* TplCategoryConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BCC28D27BDC23800F5AF12 /* TplCategoryConfig.swift */; };
+		83BFF28527BF86A000112BFF /* tTplCategoryConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFF28427BF86A000112BFF /* tTplCategoryConfig.swift */; };
+		83BFF28727C00D4C00112BFF /* TplLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFF28627C00D4C00112BFF /* TplLevel.swift */; };
+		83BFF28A27C0110400112BFF /* TpcArrayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFF28927C0110400112BFF /* TpcArrayable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,11 @@
 		83B0089327B986C70028BA6F /* TpmTypeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TpmTypeItem.swift; sourceTree = "<group>"; };
 		83B0089827B98B040028BA6F /* TplCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TplCategory.swift; sourceTree = "<group>"; };
 		83B0089B27B9B56D0028BA6F /* tTplEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tTplEntry.swift; sourceTree = "<group>"; };
+		83BCC28B27BDC13400F5AF12 /* TplOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TplOutput.swift; sourceTree = "<group>"; };
+		83BCC28D27BDC23800F5AF12 /* TplCategoryConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TplCategoryConfig.swift; sourceTree = "<group>"; };
+		83BFF28427BF86A000112BFF /* tTplCategoryConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tTplCategoryConfig.swift; sourceTree = "<group>"; };
+		83BFF28627C00D4C00112BFF /* TplLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TplLevel.swift; sourceTree = "<group>"; };
+		83BFF28927C0110400112BFF /* TpcArrayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TpcArrayable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +93,7 @@
 		83B0087327B978800028BA6F /* TpFramework */ = {
 			isa = PBXGroup;
 			children = (
+				83BFF28827C010A300112BFF /* Core */,
 				83B0089127B9867F0028BA6F /* Model */,
 				83B0088E27B9854B0028BA6F /* Log */,
 				83B0087427B978800028BA6F /* TpFramework.h */,
@@ -104,6 +115,9 @@
 			children = (
 				83B0088F27B9857F0028BA6F /* TplEntry.swift */,
 				83B0089827B98B040028BA6F /* TplCategory.swift */,
+				83BCC28D27BDC23800F5AF12 /* TplCategoryConfig.swift */,
+				83BCC28B27BDC13400F5AF12 /* TplOutput.swift */,
+				83BFF28627C00D4C00112BFF /* TplLevel.swift */,
 			);
 			path = Log;
 			sourceTree = "<group>";
@@ -128,8 +142,17 @@
 			isa = PBXGroup;
 			children = (
 				83B0089B27B9B56D0028BA6F /* tTplEntry.swift */,
+				83BFF28427BF86A000112BFF /* tTplCategoryConfig.swift */,
 			);
 			path = Log;
+			sourceTree = "<group>";
+		};
+		83BFF28827C010A300112BFF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				83BFF28927C0110400112BFF /* TpcArrayable.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,10 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83BCC28E27BDC23800F5AF12 /* TplCategoryConfig.swift in Sources */,
 				83B0087627B978800028BA6F /* TpFramework.docc in Sources */,
 				83B0089427B986C70028BA6F /* TpmTypeItem.swift in Sources */,
+				83BFF28727C00D4C00112BFF /* TplLevel.swift in Sources */,
+				83BCC28C27BDC13400F5AF12 /* TplOutput.swift in Sources */,
 				83B0089927B98B040028BA6F /* TplCategory.swift in Sources */,
 				83B0089027B9857F0028BA6F /* TplEntry.swift in Sources */,
+				83BFF28A27C0110400112BFF /* TpcArrayable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83B0089C27B9B56D0028BA6F /* tTplEntry.swift in Sources */,
+				83BFF28527BF86A000112BFF /* tTplCategoryConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

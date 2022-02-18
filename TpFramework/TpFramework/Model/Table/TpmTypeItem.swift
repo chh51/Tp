@@ -5,7 +5,7 @@ import GRDB
 ///
 ///  defines the possible **Type** in table *DurableItem* via
 ///  foreign key **DiCiUId**
-public struct TpmTypeItem: Identifiable, Equatable {
+public struct sTpmTypeItem: Identifiable, Equatable {
     /// Unique ID - supporting *Identifiable* protocol, same as *tiUId*
     public var id:     Int64? { get {return self.tiUId }}
     /// Unique ID - assigned when persisted to data store
