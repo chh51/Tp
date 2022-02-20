@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8328BAF127C06C40005351D1 /* TplOutputLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8328BAF027C06C40005351D1 /* TplOutputLevel.swift */; };
 		83B0087627B978800028BA6F /* TpFramework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 83B0087527B978800028BA6F /* TpFramework.docc */; };
 		83B0087C27B978810028BA6F /* TpFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B0087127B978800028BA6F /* TpFramework.framework */; };
 		83B0088227B978810028BA6F /* TpFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 83B0087427B978800028BA6F /* TpFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8328BAF027C06C40005351D1 /* TplOutputLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TplOutputLevel.swift; sourceTree = "<group>"; };
 		83B0087127B978800028BA6F /* TpFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TpFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B0087427B978800028BA6F /* TpFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TpFramework.h; sourceTree = "<group>"; };
 		83B0087527B978800028BA6F /* TpFramework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = TpFramework.docc; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				83BCC28D27BDC23800F5AF12 /* TplCategoryConfig.swift */,
 				83BCC28B27BDC13400F5AF12 /* TplOutput.swift */,
 				83BFF28627C00D4C00112BFF /* TplLevel.swift */,
+				8328BAF027C06C40005351D1 /* TplOutputLevel.swift */,
 			);
 			path = Log;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				83BFF28727C00D4C00112BFF /* TplLevel.swift in Sources */,
 				83BCC28C27BDC13400F5AF12 /* TplOutput.swift in Sources */,
 				83B0089927B98B040028BA6F /* TplCategory.swift in Sources */,
+				8328BAF127C06C40005351D1 /* TplOutputLevel.swift in Sources */,
 				83B0089027B9857F0028BA6F /* TplEntry.swift in Sources */,
 				83BFF28A27C0110400112BFF /* TpcArrayable.swift in Sources */,
 			);

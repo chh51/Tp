@@ -52,4 +52,19 @@ final class tTplCategoryConfig: XCTestCase {
         XCTAssert( eTplLevel.eDefault == eTplLevel.eDefault )
     }
 
+    func test_cTplCategoryConfig() throws {
+        let configModel_ = cTplCategoryConfig( .eModel )
+        let configUI_    = cTplCategoryConfig( .eUI    )
+        XCTAssert( configUI_.id != configModel_.id )
+        
+        let remoteDebug_ = configUI_.outputLevel( .ePersistRemote, .eDebug)
+        XCTAssert( remoteDebug_.level  == .eDebug          )
+        XCTAssert( remoteDebug_.output == .ePersistRemote  )
+        XCTAssert( remoteDebug_.status == .eNotImplemented )
+        XCTAssert( remoteDebug_.countActive == 0 )
+        
+        remoteDebug_.status = .eActive
+        XCTAssert( remoteDebug_.status == .eActive )
+
+    }
 }
