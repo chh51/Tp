@@ -4,7 +4,7 @@ import Atomics
 import os
 
 /// Log entry - immuatable
-public actor aTplEntry: Identifiable {
+public final class cTplEntry: Identifiable {
     
     /// Source for thread-safe sequential *id*
     private static var _lastId = ManagedAtomic<Int64>(0)
@@ -59,7 +59,7 @@ public actor aTplEntry: Identifiable {
         category    = category_
         message     = message_
         date        = date_
-        sinceLaunch = date_.timeIntervalSince( aTplEntry._startTime )
+        sinceLaunch = date_.timeIntervalSince( cTplEntry._startTime )
         fileID      = fileID_
         line        = line_
         function    = fxn_ 

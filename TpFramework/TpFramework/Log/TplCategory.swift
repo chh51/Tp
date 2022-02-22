@@ -6,12 +6,15 @@ public enum eTplCategory: Int, CaseIterable, Identifiable, pTpcArrayable {
     case eModel = 0
     /// User interface operations
     case eUI    = 1
+    /// Core
+    case eCore  = 2
     
     /// Unique descriptive string
     public var description: String {
         switch self {
         case .eModel:           return "Model"
         case .eUI:              return "User Interface"
+        case .eCore:            return "Core"
         }
     }
     

@@ -4,9 +4,9 @@ import Atomics
 /// Configuration for a *eTplCategory*
 ///
 /// Controls which *eTplOutput* and used for different *eTplLevel*
-public class cTplCategoryConfig: Identifiable {
+public class cTplCategoryConfig: Identifiable, Equatable {
     
-    struct stArrayLevels {
+    private struct stArrayLevels {
         var _levels: [cTplOutputLevel] = []
     }
 
@@ -32,11 +32,37 @@ public class cTplCategoryConfig: Identifiable {
         }
     }
     
+    /// Get *cTplOutputLevel* based on *eTplOutput* and *eTplLevel*
+    /// - Parameters:
+    ///   - output_: *eTplOutput*
+    ///   - level_: *eTplLevel*
+    /// - Returns: The matching *cTplOutputLevel*
     public func outputLevel( _ output_: eTplOutput, _ level_: eTplLevel) -> cTplOutputLevel {
         let arrayLevel_ = outputLevels[ output_.arrayIndex ]
         return arrayLevel_._levels[ level_.arrayIndex ]
     }
     
+    /// Test if any *eTplOutput* is *eActive* for caller's *eTplLevel*
+    ///  Increment *cTplOutputLevel.count* when *eActive*, even though the actual log processing
+    ///  will occur after a delay
+    /// - Returns: True if any *eTplOutput* is *eActive*
+    internal func isLevelActive( _ level_: eTplLevel ) -> Bool {
+        var haveActive_ = false
+        for output_ in eTplOutput.allCases {
+            let outputLevel_ = self.outputLevel( output_, level_ )
+            if ( outputLevel_.status == .eActive ) {
+                haveActive_ = true
+                outputLevel_.incrementCountActive() 
+            }
+        }
+        return haveActive_
+    }
+    
+    /// Support for protocol *Equatable*
+    static public func == (lhs: cTplCategoryConfig, rhs: cTplCategoryConfig) -> Bool {
+        return lhs.id == rhs.id
+    }
+
     private func initArrayLevel( output output_: eTplOutput ) -> stArrayLevels {
         var arrayLevels_ = stArrayLevels()
         for level_ in eTplLevel.allCases {

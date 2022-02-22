@@ -24,7 +24,17 @@ public final class cTplOutputLevel: Identifiable, Equatable {
     /// Accessor to thread-safe *eTplOutputStatus*
     public  var  status:      eTplOutputStatus {
         get { return _status.load(ordering: .relaxed ) }
-        set (newStatus_) { _status.store( newStatus_, ordering: .relaxed )}
+    }
+    
+    /// Set to a different *eTplOutputStatus* if change is valid
+    /// - Parameter status_: new *eTplOutputStatus*
+    /// - Returns: true if change made, else false
+    public func statusSet( _ status_: eTplOutputStatus ) -> Bool {
+        if ( output == .eConsole ) {
+            _status.store( status_, ordering: .relaxed )
+            return true
+        }
+        return false
     }
     
     /// Thread-safe count of processed *eTplEntry* while in *eTplOutputStatus.eActive*
