@@ -2,7 +2,7 @@ import Foundation
 import Atomics
 
 /// Thread-safe handler for creating and routing *TplEntry*
-public final class cTplLog: Identifiable, Equatable {
+public final class cTplLog: Identifiable, Equatable, Comparable {
     /// Source for thread-safe sequential *id*
     private static var _lastId = ManagedAtomic<Int64>(0)
     
@@ -48,11 +48,15 @@ public final class cTplLog: Identifiable, Equatable {
         config      = config_
     }
     
-    /// Support for protocol *Equatable*
+    /// Support for protocol *Equatable* to allow sorting in eTplCategory order
     static public func == (lhs: cTplLog, rhs: cTplLog) -> Bool {
         return lhs.id == rhs.id
     }
-    
+    /// Implement *Comparable* to allow sorting in eTplCategory order
+    public static func < ( lhs: cTplLog, rhs: cTplLog ) -> Bool {
+        return lhs.config.category.arrayIndex < rhs.config.category.arrayIndex
+    }
+
     /// Process *cTplEntry* on each active output.  **Only run on DispatchQueue**
     private func processLogEntry( _ entry_: cTplEntry ) {
         for output_ in eTplOutput.allCases {
@@ -70,8 +74,10 @@ public final class cTplLog: Identifiable, Equatable {
     }
     
     /// Output to Console.
-    /// - Parameter entry_: <#entry_ description#>
     private func outputConsole( _ entry_: cTplEntry ) {
-        print( entry_.message )
+        let msg_ = "\(entry_.category.visualSymbol)" +
+                   "\(entry_.level.visualSymbol)" +
+                   "\(entry_.message)"
+        print( msg_ )
     }
  }

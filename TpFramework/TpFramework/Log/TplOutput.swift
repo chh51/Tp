@@ -2,7 +2,7 @@ import Foundation
 import Atomics
 
 /// Output stream for *TplEntry*
-public enum eTplOutput: Int, CaseIterable, Identifiable, pTpcArrayable {
+public enum eTplOutput: Int, CaseIterable, Identifiable, pTpcArrayable, AtomicValue {
     
     /// Debug console
     case eConsole           = 0
@@ -22,7 +22,16 @@ public enum eTplOutput: Int, CaseIterable, Identifiable, pTpcArrayable {
         case .ePersistRemote:   return "Persist to Remote"
         }
     }
-    
+    /// Unicode.scalar for visual symbol
+    public var visualSymbol: Unicode.Scalar {
+        switch self {
+        case .eConsole:         return Unicode.Scalar("🖥")
+        case .ePersistMemory:   return Unicode.Scalar("🗯")
+        case .ePersistFile:     return Unicode.Scalar("💿")
+        case .ePersistRemote:   return Unicode.Scalar("☁️")!
+        }
+    }
+
     /// Implement protocol *Identifiable*
     public var id: Int { return self.rawValue }
     
@@ -38,6 +47,11 @@ public enum eTplOutput: Int, CaseIterable, Identifiable, pTpcArrayable {
             max_ = max( max_, entry_.arrayIndex )
         }
         return max_ + 1
+    }
+    
+    /// Implement *Comparable*
+    public static func < ( lhs: eTplOutput, rhs: eTplOutput ) -> Bool {
+        return lhs.arrayIndex < rhs.arrayIndex
     }
 }
 
@@ -62,7 +76,16 @@ public enum eTplOutputStatus: Int, CaseIterable, Identifiable, pTpcArrayable, At
         case .eActive:                 return "Active"
         }
     }
-    
+    /// Unicode.scalar for visual symbol
+    public var visualSymbol: Unicode.Scalar {
+        switch self {
+        case .eActive:              return Unicode.Scalar( "✅" )
+        case .eNotImplemented:      return Unicode.Scalar( "⛔️" )!
+        case .eInactive:            return Unicode.Scalar( "❎" )
+        case .eDisabled:            return Unicode.Scalar( "❌" )
+        }
+    }
+
     /// Implement protocol *Identifiable*
     public var id: Int { return self.rawValue }
     
@@ -78,6 +101,10 @@ public enum eTplOutputStatus: Int, CaseIterable, Identifiable, pTpcArrayable, At
             max_ = max( max_, entry_.arrayIndex )
         }
         return max_ + 1
+    }
+    /// Implement *Comparable*
+    public static func < ( lhs: eTplOutputStatus, rhs: eTplOutputStatus ) -> Bool {
+        return lhs.arrayIndex < rhs.arrayIndex
     }
 }
 

@@ -37,6 +37,18 @@ public enum eTplLevel: Int, CaseIterable, Identifiable, Comparable, pTpcArrayabl
         }
     }
     
+    /// Unicode.scalar for visual symbol
+    public var visualSymbol: Unicode.Scalar {
+        switch self {
+        case .eDebug:       return Unicode.Scalar( "👓" )
+        case .eInfo:        return Unicode.Scalar( "🖊" )
+        case .eDefault:     return Unicode.Scalar( "👀" )
+        case .eError:       return Unicode.Scalar( "💩" )
+        case .eFault:       return Unicode.Scalar( "💀" )
+
+        }
+    }
+    
     /// Implement protocol *Identifiable*
     public var id: Int { return self.rawValue }
     

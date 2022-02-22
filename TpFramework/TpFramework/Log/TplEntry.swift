@@ -13,32 +13,31 @@ public final class cTplEntry: Identifiable {
     
     /// Unique Identifiable.id within a process lifespan.
     /// Numbered sequentially from 1
-    public nonisolated let id:          Int64 =
-                _lastId.wrappingIncrementThenLoad(ordering: .sequentiallyConsistent)
+    public let id:          Int64 = _lastId.wrappingIncrementThenLoad(ordering: .sequentiallyConsistent)
     
     /// OSLogType ( from lowest .debug to highest .fault )
-    public nonisolated let level:       eTplLevel
+    public let level:       eTplLevel
     
     /// The *eTplCategory*
-    public nonisolated let category:    eTplCategory
+    public let category:    eTplCategory
     
     /// Message as a string i
-    public nonisolated let message:     String
+    public let message:     String
     
     /// Date of message
-    public nonisolated let date:        Date
+    public let date:        Date
     
     /// TimeInterval since launch
-    public nonisolated let sinceLaunch: TimeInterval
+    public let sinceLaunch: TimeInterval
     
     /// #fileID - name of file and module where it appears
-    public nonisolated let fileID:      String
+    public let fileID:      String
     
     /// #line - line number of statement
-    public nonisolated let line:        Int
+    public let line:        Int
     
     /// #function - declaration where statement appears
-    public nonisolated let function:    String
+    public let function:    String
     
     ///  Log entry with unique ID, time stamp, message, and origin location
     /// - Parameters:

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8320A1CB27C309EA006FA160 /* TplLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320A1CA27C309EA006FA160 /* TplLog.swift */; };
 		8328BAF127C06C40005351D1 /* TplOutputLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8328BAF027C06C40005351D1 /* TplOutputLevel.swift */; };
+		834B895527C487B5001A4876 /* TplLogFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B895427C487B5001A4876 /* TplLogFactory.swift */; };
+		834B895727C491D9001A4876 /* tTplLogFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B895627C491D9001A4876 /* tTplLogFactory.swift */; };
+		837362E927C544BA003CCFAD /* tTplLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837362E827C544BA003CCFAD /* tTplLog.swift */; };
 		83B0087627B978800028BA6F /* TpFramework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 83B0087527B978800028BA6F /* TpFramework.docc */; };
 		83B0087C27B978810028BA6F /* TpFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B0087127B978800028BA6F /* TpFramework.framework */; };
 		83B0088227B978810028BA6F /* TpFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 83B0087427B978800028BA6F /* TpFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,6 +42,9 @@
 /* Begin PBXFileReference section */
 		8320A1CA27C309EA006FA160 /* TplLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TplLog.swift; sourceTree = "<group>"; };
 		8328BAF027C06C40005351D1 /* TplOutputLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TplOutputLevel.swift; sourceTree = "<group>"; };
+		834B895427C487B5001A4876 /* TplLogFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TplLogFactory.swift; sourceTree = "<group>"; };
+		834B895627C491D9001A4876 /* tTplLogFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tTplLogFactory.swift; sourceTree = "<group>"; };
+		837362E827C544BA003CCFAD /* tTplLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tTplLog.swift; sourceTree = "<group>"; };
 		83B0087127B978800028BA6F /* TpFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TpFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B0087427B978800028BA6F /* TpFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TpFramework.h; sourceTree = "<group>"; };
 		83B0087527B978800028BA6F /* TpFramework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = TpFramework.docc; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 			children = (
 				83B0088F27B9857F0028BA6F /* TplEntry.swift */,
 				8320A1CA27C309EA006FA160 /* TplLog.swift */,
+				834B895427C487B5001A4876 /* TplLogFactory.swift */,
 				83B0089827B98B040028BA6F /* TplCategory.swift */,
 				83BCC28D27BDC23800F5AF12 /* TplCategoryConfig.swift */,
 				83BCC28B27BDC13400F5AF12 /* TplOutput.swift */,
@@ -149,6 +156,8 @@
 			children = (
 				83B0089B27B9B56D0028BA6F /* tTplEntry.swift */,
 				83BFF28427BF86A000112BFF /* tTplCategoryConfig.swift */,
+				834B895627C491D9001A4876 /* tTplLogFactory.swift */,
+				837362E827C544BA003CCFAD /* tTplLog.swift */,
 			);
 			path = Log;
 			sourceTree = "<group>";
@@ -286,6 +295,7 @@
 				83B0089427B986C70028BA6F /* TpmTypeItem.swift in Sources */,
 				83BFF28727C00D4C00112BFF /* TplLevel.swift in Sources */,
 				83BCC28C27BDC13400F5AF12 /* TplOutput.swift in Sources */,
+				834B895527C487B5001A4876 /* TplLogFactory.swift in Sources */,
 				83B0089927B98B040028BA6F /* TplCategory.swift in Sources */,
 				8328BAF127C06C40005351D1 /* TplOutputLevel.swift in Sources */,
 				83B0089027B9857F0028BA6F /* TplEntry.swift in Sources */,
@@ -297,7 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834B895727C491D9001A4876 /* tTplLogFactory.swift in Sources */,
 				83B0089C27B9B56D0028BA6F /* tTplEntry.swift in Sources */,
+				837362E927C544BA003CCFAD /* tTplLog.swift in Sources */,
 				83BFF28527BF86A000112BFF /* tTplCategoryConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

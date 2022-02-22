@@ -63,7 +63,7 @@ final class tTplCategoryConfig: XCTestCase {
         XCTAssert( remoteDebug_.status == .eNotImplemented )
         XCTAssert( remoteDebug_.countActive == 0 )
         
-        remoteDebug_.status = .eActive
+        XCTAssert( remoteDebug_.statusSet( .eActive ) )
         XCTAssert( remoteDebug_.status == .eActive )
 
     }
