@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831F217C2873B30600333CBE /* TplMessageID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F217B2873B30600333CBE /* TplMessageID.swift */; };
 		8320A1CB27C309EA006FA160 /* TplLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320A1CA27C309EA006FA160 /* TplLog.swift */; };
 		8328BAF127C06C40005351D1 /* TplOutputLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8328BAF027C06C40005351D1 /* TplOutputLevel.swift */; };
 		834B895527C487B5001A4876 /* TplLogFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B895427C487B5001A4876 /* TplLogFactory.swift */; };
@@ -27,6 +28,7 @@
 		83BFF28527BF86A000112BFF /* tTplCategoryConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFF28427BF86A000112BFF /* tTplCategoryConfig.swift */; };
 		83BFF28727C00D4C00112BFF /* TplLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFF28627C00D4C00112BFF /* TplLevel.swift */; };
 		83BFF28A27C0110400112BFF /* TpcArrayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFF28927C0110400112BFF /* TpcArrayable.swift */; };
+		83F9D3BB28839E0200625D14 /* tTplMessageID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9D3BA28839E0200625D14 /* tTplMessageID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		831F217B2873B30600333CBE /* TplMessageID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TplMessageID.swift; sourceTree = "<group>"; };
 		8320A1CA27C309EA006FA160 /* TplLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TplLog.swift; sourceTree = "<group>"; };
 		8328BAF027C06C40005351D1 /* TplOutputLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TplOutputLevel.swift; sourceTree = "<group>"; };
 		834B895427C487B5001A4876 /* TplLogFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TplLogFactory.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		83BFF28427BF86A000112BFF /* tTplCategoryConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tTplCategoryConfig.swift; sourceTree = "<group>"; };
 		83BFF28627C00D4C00112BFF /* TplLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TplLevel.swift; sourceTree = "<group>"; };
 		83BFF28927C0110400112BFF /* TpcArrayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TpcArrayable.swift; sourceTree = "<group>"; };
+		83F9D3BA28839E0200625D14 /* tTplMessageID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tTplMessageID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 				83BCC28B27BDC13400F5AF12 /* TplOutput.swift */,
 				83BFF28627C00D4C00112BFF /* TplLevel.swift */,
 				8328BAF027C06C40005351D1 /* TplOutputLevel.swift */,
+				831F217B2873B30600333CBE /* TplMessageID.swift */,
 			);
 			path = Log;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				83BFF28427BF86A000112BFF /* tTplCategoryConfig.swift */,
 				834B895627C491D9001A4876 /* tTplLogFactory.swift */,
 				837362E827C544BA003CCFAD /* tTplLog.swift */,
+				83F9D3BA28839E0200625D14 /* tTplMessageID.swift */,
 			);
 			path = Log;
 			sourceTree = "<group>";
@@ -233,7 +239,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					83B0087027B978800028BA6F = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -292,6 +298,7 @@
 				83BCC28E27BDC23800F5AF12 /* TplCategoryConfig.swift in Sources */,
 				83B0087627B978800028BA6F /* TpFramework.docc in Sources */,
 				8320A1CB27C309EA006FA160 /* TplLog.swift in Sources */,
+				831F217C2873B30600333CBE /* TplMessageID.swift in Sources */,
 				83B0089427B986C70028BA6F /* TpmTypeItem.swift in Sources */,
 				83BFF28727C00D4C00112BFF /* TplLevel.swift in Sources */,
 				83BCC28C27BDC13400F5AF12 /* TplOutput.swift in Sources */,
@@ -307,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83F9D3BB28839E0200625D14 /* tTplMessageID.swift in Sources */,
 				834B895727C491D9001A4876 /* tTplLogFactory.swift in Sources */,
 				83B0089C27B9B56D0028BA6F /* tTplEntry.swift in Sources */,
 				837362E927C544BA003CCFAD /* tTplLog.swift in Sources */,
@@ -360,6 +368,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -424,6 +433,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -452,6 +462,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4P58NH3389;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -480,6 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4P58NH3389;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -508,6 +520,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 4P58NH3389;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -524,6 +537,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 4P58NH3389;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;

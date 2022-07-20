@@ -21,23 +21,42 @@ public final class cTplLog: Identifiable, Equatable, Comparable {
     /// - Parameters:
     ///   - level_: level of message *eTplLevel*
     ///   - message_:  Message body (may include interpolated strings)
+    ///   - messageId_: Message number ( default 0 )
     ///   - fileID_:  File location ( default provided )
     ///   - line_:  Line ( default provided )
     ///   - fxn_:  Function name ( default provided )
-    public func log( _      level_:    eTplLevel,
-                     _      message_:  String,
-                     fileID fileID_:   String = #fileID,
-                     line   line_:     Int    = #line,
-                     fxn    fxn_:      String = #function ) {
+    public func log( _      level_:     eTplLevel,
+                     _      message_:   String,
+                     _      messageId_: Int    = 0,
+                     fileID fileID_:    String = #fileID,
+                     line   line_:      Int    = #line,
+                     fxn    fxn_:       String = #function ) {
         if !config.isLevelActive( level_ ) {
             return
         }
-        let logEntry_ = cTplEntry( level_, config.category, message_, fileID: fileID_, line: line_, fxn: fxn_ )
+        let logEntry_ = cTplEntry( level_, config.category, message_,
+                                   messageId_, fileID: fileID_, line: line_, fxn: fxn_ )
         _dispatchQ.async {
             self.processLogEntry( logEntry_ )
         }
     }
+    
+    public func log( msgId  messageId_: any pTplMessageID,
+                     _      message_:   String,
+                     fileID fileID_:    String = #fileID,
+                     line   line_:      Int    = #line,
+                     fxn    fxn_:       String = #function ) {
+        assert( messageId_.category == config.category )
+        self.log( messageId_.level, message_, messageId_.messageId, fileID: fileID_, line: line_, fxn: fxn_)
+    }
 
+    public func log( msgId  messageId_: any pTplMessageID,
+                     fileID fileID_:    String = #fileID,
+                     line   line_:      Int    = #line,
+                     fxn    fxn_:       String = #function ) {
+        assert( messageId_.category == config.category )
+        self.log( messageId_.level, "", messageId_.messageId, fileID: fileID_, line: line_, fxn: fxn_)
+    }
     /// Initializer - internal access for use by *cTplLogFactory*
     /// - Parameters:
     ///   - queue_:  DispatchQueue to process *cTplEntry* on
@@ -75,8 +94,10 @@ public final class cTplLog: Identifiable, Equatable, Comparable {
     
     /// Output to Console.
     private func outputConsole( _ entry_: cTplEntry ) {
+        let msgId_ = entry_.messageId == 0 ? "    " : "\(entry_.messageId) "
         let msg_ = "\(entry_.category.visualSymbol)" +
-                   "\(entry_.level.visualSymbol)" +
+                   "\(entry_.level.visualSymbol) " +
+                   msgId_ +
                    "\(entry_.message)"
         print( msg_ )
     }

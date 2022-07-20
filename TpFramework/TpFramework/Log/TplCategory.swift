@@ -3,12 +3,14 @@ import Atomics
 
 /// Category of *aTplEntry*
 public enum eTplCategory: Int, CaseIterable, Identifiable, pTpcArrayable, AtomicValue {
+    /// Test
+    case eTest  = 0
     /// Persistent store operations
-    case eModel = 0
+    case eModel = 1
     /// User interface operations
-    case eUI    = 1
+    case eUI    = 2
     /// Core
-    case eCore  = 2
+    case eCore  = 3
     
     /// Unique descriptive string
     public var description: String {
@@ -16,6 +18,7 @@ public enum eTplCategory: Int, CaseIterable, Identifiable, pTpcArrayable, Atomic
         case .eModel:           return "Model"
         case .eUI:              return "User Interface"
         case .eCore:            return "Core"
+        case .eTest:            return "Test"
         }
     }
     
@@ -25,6 +28,7 @@ public enum eTplCategory: Int, CaseIterable, Identifiable, pTpcArrayable, Atomic
         case .eCore:    return Unicode.Scalar("c")
         case .eModel:   return Unicode.Scalar("m")
         case .eUI:      return Unicode.Scalar("u")
+        case .eTest:    return Unicode.Scalar("t")
         }
     }
     

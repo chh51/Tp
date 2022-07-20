@@ -6,7 +6,7 @@ class tTplLog: XCTestCase {
 
     override func setUpWithError() throws {
         XCTAssert( _factory.id == 1 )
-        let logCore_        = _factory.logForCategory( .eCore )
+        let logCore_        = _factory.logForCategory( .eTest )
         let config_         = logCore_.config
         for level_ in eTplLevel.allCases {
             let outputLevel_ = config_.outputLevel(.eConsole, level_ )
@@ -19,7 +19,10 @@ class tTplLog: XCTestCase {
     }
 
     func testConsole() {
-        let logCore_        = _factory.logForCategory( .eCore )
+        
+        enum eTestMessage: Int, CaseIterable
+              { case eInfo1 = 100, eInfo2, eDebug1, eDebug2, eDefault1, eError1, eFault1 }
+        let logCore_        = _factory.logForCategory( .eTest )
         let config_         = logCore_.config
         let output_         = eTplOutput.eConsole
         let debugOL_        = config_.outputLevel( output_, .eDebug   )
@@ -37,6 +40,7 @@ class tTplLog: XCTestCase {
         logCore_.log( .eFault,   "log 2 - eFault 2")
         logCore_.log( .eDebug,   "log 3 - eDebug 1")
         logCore_.log( .eDefault, "log 4 - eDefault 1")
+        logCore_.log(msgId: eTplMsgDebug.eDebug1   )
         logCore_.log( .eInfo,    "log 5 - eInfo 1")
         logCore_.log( .eError,   "log 6 - eError 1")
         logCore_.log( .eDebug,   "log 7 - eDebug 2")
@@ -45,6 +49,7 @@ class tTplLog: XCTestCase {
         logCore_.log( .eDebug,   "log 10 - eDebug 3")
         logCore_.log( .eInfo,    "log 11 - eInfo 3")
         logCore_.log( .eFault,   "log 12 - eFault 4")
+        logCore_.log(msgId: eTplMsgDebug.eDebug2, "eTpsMsgDebug.eDebug2")
 
         let debugEnd_       = debugOL_.countActive
         let infoEnd_        = infoOL_.countActive
@@ -52,11 +57,11 @@ class tTplLog: XCTestCase {
         let errorEnd_       = errorOL_.countActive
         let faultEnd_       = faultOL_.countActive
         
-        XCTAssert( debugStart_ + 3   == debugEnd_   )
-        XCTAssert( infoStart_ + 3    == infoEnd_    )
+        XCTAssert( debugStart_   + 5 == debugEnd_   )
+        XCTAssert( infoStart_    + 3 == infoEnd_    )
         XCTAssert( defaultStart_ + 1 == defaultEnd_ )
-        XCTAssert( errorStart_ + 1   == errorEnd_   )
-        XCTAssert( faultStart_ + 4   == faultEnd_   )
+        XCTAssert( errorStart_   + 1 == errorEnd_   )
+        XCTAssert( faultStart_   + 4 == faultEnd_   )
     }
 
 }
